@@ -1,9 +1,9 @@
 FROM node:latest
 
-WORKDIR /usr/src/users
-COPY package.json /usr/src/users
+WORKDIR /user-service
+COPY package.json /user-service
 RUN yarn
-COPY . /usr/src/users
+COPY . /user-service
 
 EXPOSE 7101
 CMD ["sh", "-c", "yarn db:migrate && yarn watch"]

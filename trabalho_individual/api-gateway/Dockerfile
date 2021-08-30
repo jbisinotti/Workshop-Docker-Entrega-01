@@ -1,10 +1,9 @@
 FROM node:latest
 
-WORKDIR /usr/src/users
-COPY package.json /usr/src/users
+WORKDIR /api-gateway
+COPY package.json /api-gateway
 RUN yarn
-RUN yarn db:migrate
-COPY . /usr/src/users
+COPY . /api-gateway
 
 EXPOSE 7101
 CMD ["yarn", "watch"]

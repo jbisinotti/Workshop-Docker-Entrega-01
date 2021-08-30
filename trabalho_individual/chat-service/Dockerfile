@@ -1,9 +1,9 @@
 FROM node:latest
 
-WORKDIR /usr/src/chats
-COPY package.json /usr/src/chats/
+WORKDIR /chat-service
+COPY package.json /chat-service
 RUN yarn
-COPY . /usr/src/chats
+COPY . /chat-service
 
 EXPOSE 7100
 CMD [ "yarn", "watch" ]
